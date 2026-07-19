@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Интерактивная галерея</title>
+    <title>Доступная Интерактивная Галерея</title>
     <style>
-        /* Базовые стили, чтобы галерея выглядела аккуратно */
         #image {
             width: 85%;
             height: 300px;
@@ -27,39 +26,34 @@
             border: 3px solid #ccc;
             margin: 10px;
             cursor: pointer;
+            transition: border-color 0.2s;
         }
-        .preview:hover {
-            border-color: #333;
+        /* Стилизация фокуса для клавиатуры, чтобы было видно, где находится курсор */
+        .preview:focus, .preview:hover {
+            border-color: #1a365d;
+            outline: 2px solid #2b6cb0;
+        }
+        .gallery-container {
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
     <div id="image">
-        Наведите курсор на изображение ниже, чтобы отобразить его здесь
+        Наведите курсор на изображение ниже или используйте Tab
     </div>
 
-    <div style="text-align: center;">
-        <img class="preview" 
-             src="https://picsum.photos/600/400?random=1" 
-             alt="Осенний лес в горах" 
-             onmouseover="upDate(this)" 
-             onmouseleave="unDo()">
-
-        <img class="preview" 
-             src="https://picsum.photos/600/400?random=2" 
-             alt="Океанский закат" 
-             onmouseover="upDate(this)" 
-             onmouseleave="unDo()">
-
-        <img class="preview" 
-             src="https://picsum.photos/600/400?random=3" 
-             alt="Городские огни ночью" 
-             onmouseover="upDate(this)" 
-             onmouseleave="unDo()">
+    <div class="gallery-container">
+        <!-- 6 изображений с уникальными alt и полным набором событий мыши и фокуса -->
+        <img class="preview" src="https://picsum.photos/600/400?random=1" alt="Осенний лес в горах" onmouseover="upDate(this)" onmouseleave="unDo()" onfocus="upDate(this)" onblur="unDo()">
+        <img class="preview" src="https://picsum.photos/600/400?random=2" alt="Океанский закат" onmouseover="upDate(this)" onmouseleave="unDo()" onfocus="upDate(this)" onblur="unDo()">
+        <img class="preview" src="https://picsum.photos/600/400?random=3" alt="Городские огни ночью" onmouseover="upDate(this)" onmouseleave="unDo()" onfocus="upDate(this)" onblur="unDo()">
+        <img class="preview" src="https://picsum.photos/600/400?random=4" alt="Заснеженные вершины" onmouseover="upDate(this)" onmouseleave="unDo()" onfocus="upDate(this)" onblur="unDo()">
+        <img class="preview" src="https://picsum.photos/600/400?random=5" alt="Зеленый тропический лист" onmouseover="upDate(this)" onmouseleave="unDo()" onfocus="upDate(this)" onblur="unDo()">
+        <img class="preview" src="https://picsum.photos/600/400?random=6" alt="Пустынные дюны" onmouseover="upDate(this)" onmouseleave="unDo()" onfocus="upDate(this)" onblur="unDo()">
     </div>
 
-    <!-- Подключаем скрипт, который создадим следующим шагом -->
     <script src="script.js"></script>
 </body>
 </html>
